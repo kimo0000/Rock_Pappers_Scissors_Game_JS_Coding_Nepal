@@ -1,0 +1,122 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to left top, #f214, #a87425);
+}
+
+i {
+  color: blueviolet;
+}
+
+.wrapper {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 320px;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+}
+
+.wrapper.start .result_game .user_game {
+  transform-origin: left;
+  animation: moveuser .5s infinite ease-in-out;
+}
+
+.wrapper.start .result_game .cpu_game {
+  transform-origin: right;
+  animation: movecpu .5s infinite ease-in-out;
+}
+
+@keyframes moveuser {
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes movecpu {
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+
+.result_game {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.result_game i {
+  font-size: 4rem;
+  color: blueviolet;
+}
+
+.result_game .user_game i {
+  transform: rotate(90deg);
+}
+
+.result_game .cpu_game i {
+  transform: rotate(-90deg);
+}
+
+.result {
+  text-align: center;
+  color: blueviolet;
+  font-size: 1.5rem;
+}
+
+.choce {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15px;
+}
+
+.choce div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.wrapper.start .choce div {
+  pointer-events: none;
+}
+
+.choce div:hover {
+  opacity: 1;
+}
+
+.choce div.active {
+  opacity: 1;
+}
+
+.choce div i {
+  font-size: 2rem;
+  pointer-events: none;
+}
+
+.choce div span {
+  pointer-events: none;
+}
